@@ -1,0 +1,79 @@
+/* Note.css - Styling for the Note component */
+
+.note-card {
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(90, 77, 70, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(179, 134, 115, 0.1);
+}
+
+.note-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(90, 77, 70, 0.15);
+}
+
+.note-header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(179, 134, 115, 0.1);
+  background-color: rgba(179, 134, 115, 0.05);
+}
+
+.note-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #5a4d46;
+  font-family: 'Playfair Display', serif;
+}
+
+.delete-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #b38673;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+  background-color: rgba(179, 134, 115, 0.1);
+  color: #a27565;
+}
+
+.note-content {
+  padding: 1rem;
+  flex: 1;
+  color: #5a4d46;
+}
+
+.note-content p {
+  margin: 0;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.note-footer {
+  padding: 0.7rem 1rem;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid rgba(179, 134, 115, 0.1);
+  background-color: rgba(179, 134, 115, 0.02);
+}
+
+.note-date {
+  font-size: 0.8rem;
+  color: #867670;
+}

@@ -1,0 +1,228 @@
+/* Home.css - Updated to include notes functionality */
+
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #fff5f0 0%, #f8f1eb 100%);
+  font-family: 'Inter', sans-serif;
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(90, 77, 70, 0.1);
+}
+
+.logo h1 {
+  font-family: 'Playfair Display', serif;
+ margin: 0;
+  color: #b38673;
+  font-weight: 400;
+}
+.logoimg {
+    margin: 300;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tab-button {
+  padding: 0.5rem 1.2rem;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #5a4d46;
+  transition: all 0.2s;
+}
+
+.tab-button:hover {
+  background-color: rgba(179, 134, 115, 0.1);
+}
+
+.tab-button.active {
+  background-color: #b38673;
+  color: white;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.welcome-message {
+  color: #5a4d46;
+}
+
+.logout-button {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid #b38673;
+  color: #b38673;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logout-button:hover {
+  background-color: #b38673;
+  color: white;
+}
+
+.home-main {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Notes container styles */
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  gap: 2rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  color: #5a4d46;
+  margin-top: 0;
+  font-weight: 500;
+  border-bottom: 2px solid #b38673;
+  padding-bottom: 0.5rem;
+}
+
+.notes-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(90, 77, 70, 0.1);
+}
+
+.notes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.no-notes {
+  color: #867670;
+  font-style: italic;
+  text-align: center;
+  padding: 2rem;
+  grid-column: 1 / -1;
+  background-color: rgba(179, 134, 115, 0.05);
+  border-radius: 4px;
+}
+
+/* Create note form styles */
+.create-note-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(90, 77, 70, 0.1);
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-input, .form-textarea {
+  padding: 0.8rem;
+  border: 1px solid #e5dcd5;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus, .form-textarea:focus {
+  border-color: #b38673;
+  outline: none;
+}
+
+.submit-button {
+  padding: 0.8rem 1.5rem;
+  background-color: #b38673;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.submit-button:hover {
+  background-color: #a27565;
+}
+
+.home-loading {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fff5f0 0%, #f8f1eb 100%);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(179, 134, 115, 0.3);
+  border-radius: 50%;
+  border-top-color: #b38673;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.home-footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: white;
+  color: #867670;
+  font-size: 0.8rem;
+  border-top: 1px solid #e5dcd5;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .home-header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .home-main {
+    padding: 1rem;
+  }
+
+  .notes-list {
+    grid-template-columns: 1fr;
+  }
+}
