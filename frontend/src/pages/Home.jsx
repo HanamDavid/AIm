@@ -68,7 +68,7 @@ function Home() {
       <header className="home-header">
         <img
           className="logoimg"
-          src="../../public/Aimhub.svg"
+          src="/Aimhub.svg"
           width="150"
           height="80"
           alt="AimHub logo"

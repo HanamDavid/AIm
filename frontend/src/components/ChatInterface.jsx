@@ -77,7 +77,7 @@ function ChatInterface() {
     setMessages((prev) => [...prev, userMessage]);
     setLoading(true);
     try {
-      const result = await askMistral(text);
+      const result = await askMistral(text,selectedSession);
       const botMessage = {
         id: messages.length + 2,
         text: result,

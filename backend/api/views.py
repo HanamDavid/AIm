@@ -42,14 +42,17 @@ class CreateUserView (generics.CreateAPIView):
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def chat_with_mistral(request):
+    print("trying something")
     """
     Handles user messages, manages chat sessions, and communicates with Mistral AI.
     """
+    print(request)
     try:
         # Cargar los datos de la solicitud
         data = json.loads(request.body)
         user = request.user
         user_message = data.get("message", "").strip()
+        print("Raw Request Body:", request.body)
 
         # Validar que el mensaje no esté vacío
         if not user_message:
@@ -79,9 +82,12 @@ def chat_with_mistral(request):
             "max_tokens": 1000
         }
 
+        print(headers)
+        print(payload)
         # Hacer la petición a la API de Mistral
         response = requests.post("https://api.mistral.ai/v1/chat/completions", headers=headers, json=payload)
         response_data = response.json()
+        print(response_data)
 
         print("Respuesta de Mistral:", response_data)  # Debugging
 
